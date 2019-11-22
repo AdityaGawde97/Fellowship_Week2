@@ -1,0 +1,68 @@
+/**
+ * Ordered List
+ * Desc -> Read .a List of Numbers from a file and arrange it ascending Order in a Linked List. 
+ * Take user input for a number, if found then pop the number out of the list else insert the 
+ * number in appropriate position
+ * I/P -> Read from file the list of Numbers and take user input for a new number
+ * Logic -> Create a Ordered Linked List having Numbers in ascending order. 
+ * O/P -> The List of Numbers to a File.
+ * 
+ * Author Name : Aditya Gawde
+ * 
+ * Date : 18/11/2019
+ */
+
+var utility = require('../Utility/linkledListUtility');
+
+var list = new utility.LinkedList();
+
+var numberFromFileArray = utility.readFromFile('numberInput.txt')
+try
+{
+    for( var i=0; i<numberFromFileArray.length; i++ ){
+        if(isNaN(numberFromFileArray[i]))
+        {
+            throw 'Your file contain Alphabets. File must contain Numbers'
+            
+        }
+        else
+        {
+            list.addNode(numberFromFileArray[i]);
+        }
+            
+    }
+    console.log(list.printList());
+    list.sortLinkedList();
+    console.log(list.printList());
+    var userInput = utility.readLine().questionInt('Enter the number that you want to search : ');
+
+    // searching for the user input in the list
+    if (list.searchNode(userInput)) 
+    {
+        // user input found, removing from list
+        list.removeNode(userInput);
+    } 
+    else
+    {
+        //user input not found, adding in list in the sorting way
+        list.addInSortWay(userInput);
+    }
+    var content = list.printList();
+    console.log(content);
+    
+    // writing resulting list in the file
+    utility.writeIntoFile('numberInput.txt', content);
+    
+}
+catch(error)
+{
+    console.log(error);
+    
+}
+
+
+
+
+
+
+ 

@@ -1,0 +1,1 @@
+Take a user input to search a Word in the List 
