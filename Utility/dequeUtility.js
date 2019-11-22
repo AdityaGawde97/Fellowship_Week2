@@ -21,6 +21,12 @@ class Deque
         return this.front == null;
     }
 
+    /**
+     * @description : method to insert item in the front of the deque
+     * 
+     * @param {*} data : data to be inserted into the deque 
+     */
+
     insertFront(data)
     {
         var newNode = new QNode(data);
@@ -35,6 +41,12 @@ class Deque
         this.front = newNode;
     }
 
+    /**
+     * @description : method to insert item at the rear of the deque
+     * 
+     * @param {*} data : data to be inserted into the deque 
+     */
+
     insertRear(data)
     {
          var newNode = new QNode(data);
@@ -48,6 +60,12 @@ class Deque
          }
          this.rear = newNode;
     }
+
+   /**
+     * @description : method to delete item from front of the deque 
+     * 
+     * @preturns : item deleted from the front
+     */
 
     removeFront()
     {
@@ -67,6 +85,12 @@ class Deque
         return temp;
     }
 
+   /**
+     * @description : method to delete item from rear of the deque 
+     * 
+     * @preturns : item deleted from the rear
+     */
+
     removeRear()
     {
         if(this.rear == null)
@@ -85,6 +109,9 @@ class Deque
         return temp;
     }
 
+    /**
+     * @returns : front item
+     */
     getFront(){
         if(this.isEmpty())
         {
@@ -93,6 +120,9 @@ class Deque
         return this.front.data;
     }
 
+    /**
+     * @returns : rear item
+     */
     getRear(){
         if(this.isEmpty())
         {
@@ -100,6 +130,11 @@ class Deque
         }
         return this.rear.data;
     }
+
+    /**
+     * @description : traversing the deque from the front to rear
+     * @returns : string 
+     */
 
     printForword(){
         var current = this.front;
@@ -111,6 +146,11 @@ class Deque
         }
         return string;
     }
+
+    /**
+     * @description : traversing the deque from the rear to front
+     * @returns : string 
+     */
 
     printBackword(){
         

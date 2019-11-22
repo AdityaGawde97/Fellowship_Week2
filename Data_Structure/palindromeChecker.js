@@ -18,16 +18,17 @@
 var utility = require('../Utility/dequeUtility');
 var dq = new utility.Deque();
 
-var input = utility.readLine().question('\nEntet the String : ');
+var input = utility.readLine().question('\nEntet the String : '); // accepting the input string from the user
 
-var stringArray = input.split('');
+var stringArray = input.split('');     // input string store into the array
 
 for(var i = 0; i < stringArray.length; i++)
 {
-    dq.insertRear(stringArray[i]);
+    dq.insertRear(stringArray[i]);     // enqueueing the array into the deque
 }
 
-if ( dq.printForword() === dq.printBackword() ) {
+// comparing the string from forward and backword
+if ( dq.printForword() === dq.printBackword() ) {           
     console.log(`\nEntered Strings ${input} is Palindrome\n`);
 } 
 else {

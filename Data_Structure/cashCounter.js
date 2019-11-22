@@ -37,7 +37,7 @@
     try
     {
         
-        console.log(`\nPerson : ${queue.peek()} `);
+        console.log(`\nPerson : ${queue.peek()} `);     // retriving the front item
         console.log('What do you want to do ?');
         console.log('1)Deposit 2)Withdraw\n');
         var choice = utility.readLine().questionInt('Enter your Choice : ');
@@ -46,7 +46,7 @@
                 console.log('\n*** Deposite ***');
                 var depositeAmount = utility.readLine().questionInt('Enter your Deposite Money : ');
                 bankBalance += depositeAmount;
-                console.log(`Person ${queue.deQueue()} remove from the Queue`);
+                console.log(`Person ${queue.deQueue()} remove from the Queue`);  // after reciving service person removing from the queue
                 console.log('\nBank Balance = ' + bankBalance + '\n');
                 break;
 
