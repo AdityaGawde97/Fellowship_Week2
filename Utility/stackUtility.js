@@ -17,7 +17,7 @@ class Stack
 
     /**
      * Method for pushing data in the stack in LIFO or FILO fasion
-     * @param {*} data :  data to be pushed in the stack
+     * @param {data to be pushed in the stack} data   
      */
     push(data)
     {
@@ -39,7 +39,7 @@ class Stack
     }
 
     /**
-     * method for poping data from stack
+     * @description : method for poping data from stack
      * @returns pop data
      */
     pop()
@@ -80,7 +80,7 @@ class Stack
     }
 
     /**
-     * @param string : to store the stack data
+     * @param {to store the stack data} string 
      * @returns stack data
      */
     printStack()
@@ -109,9 +109,14 @@ class Stack
 module.exports = {
     Stack,
 
+    readLine(){
+        var read = require('readline-sync');
+        return read;
+    },
+
     /**
      * 
-     * @param {} expressionArray : Expression  array passed to the function
+     * @param {Expression  array passed to the function} expressionArray  
      * @returns the stack is empty or not
      */
     checkBalancedParentheses( expressionArray )
@@ -120,12 +125,12 @@ module.exports = {
         for( var i=0; i<expressionArray.length; i++ )
         {
         
-            if( expressionArray[i] == '(' )
+            if( expressionArray[i] == '(' || expressionArray[i] == '{' || expressionArray[i] == '[' )
             {
                 // push open parentheses to the stack
                 stack.push(expressionArray[i]);
             }
-            if( expressionArray[i] == ')' )
+            if( expressionArray[i] == ')' || expressionArray[i] == '}' || expressionArray[i] == ']' )
             {
                 if( stack.isEmpty() )
                 {
@@ -146,13 +151,21 @@ module.exports = {
     },
 
     /**
-     * @param {} symbol1 : passing open parentheses
-     * @param {} symbol2 : passing close parentheses
+     * @param {passing open parentheses} symbol1  
+     * @param {passing close parentheses} symbol2 
      * @returns if open and close parentheses match found
      */
     checkMatchPair( symbol1, symbol2 )
     {
         if( symbol1 == '(' && symbol2 == ')' )
+        {
+            return true;
+        }
+        if( symbol1 == '{' && symbol2 == '}' )
+        {
+            return true;
+        }
+        if( symbol1 == '[' && symbol2 == ']' )
         {
             return true;
         }

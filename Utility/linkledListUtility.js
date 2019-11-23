@@ -14,7 +14,10 @@ class LinkedList {
         this.head = null; 
     } 
 
-    //method for adding new node into the linked list
+    /**
+     * @description : method for adding new node into the linked list
+     * @param {data to be add in the linked list} data 
+     */
     addNode(data) 
     { 
         // creating new node and pushing data
@@ -38,7 +41,10 @@ class LinkedList {
          
     } 
 
-    // method for removing node from list
+     /**
+      * @description : method for removing node from list
+      * @param {data to be removed from the list} data 
+      */
     removeNode(data) 
     {   
         var temp = this.head, previous = null; 
@@ -64,7 +70,10 @@ class LinkedList {
         previous.next = temp.next; 
     } 
 
-    //method for printing the linked list
+    /**
+     * @description : method for printing the linked list
+     * @returns : string contain list data
+     */
     printList() 
     { 
         var currentNode = this.head;  
@@ -72,13 +81,31 @@ class LinkedList {
         while (currentNode != null) { 
             //process.stdout.write(currentNode.data + ' '); 
             listString = listString + currentNode.data + ' ';
-            currentNode = currentNode.next; 
+            currentNode = currentNode.next;
         }
         return listString;
         
     } 
 
-    // method for searching node in the list
+    /**
+     * @description : printing the list
+     */
+    displayList() 
+    { 
+        var currentNode = this.head;  
+        while (currentNode != null) { 
+            process.stdout.write(currentNode.data + ' '); 
+            currentNode = currentNode.next; 
+            if(currentNode != null)
+                process.stdout.write('-> ')
+        }
+    }
+      
+    /**
+     * @description : method for searching node in the list
+     * @param {node to be search} data  
+     * @returns : node found or not
+     */
     searchNode(data)
     {
         var currentNode = this.head;   
@@ -91,7 +118,9 @@ class LinkedList {
         return false;
     }
 
-    //method dfor sorting linked list in ascending order
+    /**
+     * @description : method for sorting linked list in ascending order
+     * */
     sortLinkedList()
     {
         var currentNode = this.head, nextNode = null;  
@@ -125,7 +154,10 @@ class LinkedList {
         }  
     }
 
-    // method for inserting new node in sorted way
+    /**
+     * @description: method for inserting new node in sorted way
+     * @param { node to be add } data
+     */
     addInSortWay(data)
     {
         var newNode = new Node(data);
@@ -176,7 +208,7 @@ module.exports=
 
     /**
      * @description : read input from file converting into array and returning the array
-     * @param fileName passing the file name
+     * @param {passing the file name} fileName 
      * @returns retrived data converted into array
      * */
     readFromFile(fileName){
@@ -188,13 +220,24 @@ module.exports=
 
     /**
      * 
-     * @param {} fileName : passing the file name
-     * @param {} content  : passing the content to write in file
+     * @param {passing the file name} fileName 
+     * @param {passing the content to write in file} content   
      */
     writeIntoFile(fileName,content)
     {
         var fs = require('fs');
         fs.writeFileSync(fileName,content,'utf8')
+    },
+
+    /**
+     * @description : calculating the key
+     * @param {data passed to calculate the key} key
+     * @returns calculated slot number
+     */
+    calculateKey(key)
+    {
+        key = key % 11;
+        return key;
     }
 
 }

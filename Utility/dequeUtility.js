@@ -24,7 +24,7 @@ class Deque
     /**
      * @description : method to insert item in the front of the deque
      * 
-     * @param {*} data : data to be inserted into the deque 
+     * @param {data to be inserted into the deque } data  
      */
 
     insertFront(data)
@@ -44,7 +44,7 @@ class Deque
     /**
      * @description : method to insert item at the rear of the deque
      * 
-     * @param {*} data : data to be inserted into the deque 
+     * @param {data to be inserted into the deque} data 
      */
 
     insertRear(data)

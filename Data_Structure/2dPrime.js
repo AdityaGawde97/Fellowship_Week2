@@ -13,14 +13,19 @@ var utility1 = require('../../Fellowship_Week1/Utility/Utility');
 var utility2 = require('../Utility/utility')
 
 var k=0;
+
+// initializing the array with label
 var primeArray = [['000-100 '],['100-200 '],['200-300 '],['300-400 '],['400-500 '],['500-600 '],['600-700 '],['700-800 '],['800-900 '],['900-1000']];
 var primeNumbers = new Array();
+// inserting the prime number into the array
 for(var i=0;i<1000;i++){
-    if(utility1.checkPrime(i)){
+    if(utility1.checkPrime(i))      // checking the prime numbers
+    {
         primeNumbers[k++]=i;
     }
 }
 
+// printing  the 2D array of prime numbers 
 var finalArray=utility2.storeIn2DArray(primeNumbers,primeArray)
 for(var i=0;i<finalArray.length;i++){
     for(var j=0;j<finalArray[i].length;j++){

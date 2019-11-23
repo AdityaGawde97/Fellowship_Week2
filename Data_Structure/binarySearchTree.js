@@ -13,15 +13,27 @@ console.log('Ends.........');
 
 
 */   
-function factorial(n) 
+
+/**
+ * @description : calculation factorial
+ * @param {calculation factorial of number n} number
+ * @returns : factorial of the number 
+ */
+function factorial(number) 
 { 
     var fact = 1; 
-    for (var i = 1; i <= n; ++i) 
+    for (var i = 1; i <= number; ++i) 
     { 
         fact *= i; 
     } 
     return fact;
 }
+
+/**
+ * @description : function to calculate number
+ * @param {number of nodes of binary search tree} nodes 
+ * @returns : number of nodes
+ */
 function numberOfBTS(nodes)
 {
     var numberOfTrees = Math.floor( (factorial(2 * nodes) ) / (factorial(nodes + 1) * factorial( nodes )));  
@@ -29,12 +41,15 @@ function numberOfBTS(nodes)
 }
 
 var utility = require('../Utility/utility');
+
+// input accepting from the user to run testcases number of times
 var testCases = utility.readLine().questionInt("\nEnter the total number of testcases : ");
 
 while (testCases > 0) {
-    let totalNodes = utility.readLine().questionInt("\nEnter total number of nodes : ");
-    let totalTree = numberOfBTS(parseInt(totalNodes));
-    console.log('\n' + totalTree + ' Trees are generated.');
+
+    let totalNodes = parseInt(utility.readLine().questionInt("\nEnter total number of nodes : "));
+    let totalTreeNodes = numberOfBTS(totalNodes);
+    console.log('\n' + totalTreeNodes + ' Trees are generated.');
     testCases--;
 }
-console.log('Ends.........\n');
+console.log('\nEnds.........\n');

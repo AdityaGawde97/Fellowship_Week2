@@ -7,9 +7,9 @@
  * Logic -> Write a Queue Class to enqueue and dequeue people to either deposit or withdraw 
  *          money and maintain the cash balance
  * 
- * Author Name : Aditya Gawde
+ * @author : Aditya Gawde
  * 
- * Date : 20/11/2019
+ * @since : 20/11/2019
  */
 
  var utility = require('../Utility/queueUtility');

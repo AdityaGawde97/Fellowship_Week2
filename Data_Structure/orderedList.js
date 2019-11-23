@@ -7,9 +7,9 @@
  * Logic -> Create a Ordered Linked List having Numbers in ascending order. 
  * O/P -> The List of Numbers to a File.
  * 
- * Author Name : Aditya Gawde
+ * @author : Aditya Gawde
  * 
- * Date : 18/11/2019
+ * @since : 18/11/2019
  */
 
 var utility = require('../Utility/linkledListUtility');
@@ -27,14 +27,18 @@ try
         }
         else
         {
-            list.addNode(numberFromFileArray[i]);
+            list.addNode(parseInt(numberFromFileArray[i]));
         }
             
     }
-    console.log(list.printList());
+    console.log();
+    list.displayList();
     list.sortLinkedList();
-    console.log(list.printList());
-    var userInput = utility.readLine().questionInt('Enter the number that you want to search : ');
+    console.log();
+    list.displayList();
+    console.log();
+
+    var userInput = utility.readLine().questionInt('\nEnter the number that you want to search : ');
 
     // searching for the user input in the list
     if (list.searchNode(userInput)) 
@@ -48,8 +52,10 @@ try
         list.addInSortWay(userInput);
     }
     var content = list.printList();
-    console.log(content);
-    
+    console.log();
+    list.displayList();
+    console.log();
+    console.log();
     // writing resulting list in the file
     utility.writeIntoFile('numberInput.txt', content);
     

@@ -17,7 +17,7 @@ class Queue
 
     /**
      * @description : method to add items in the queue
-     * @param {*} item : passing item to add in the queue 
+     * @param {passing item to add in the queue } item 
      */
 
     enQueue(item)

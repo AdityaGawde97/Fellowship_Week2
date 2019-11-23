@@ -7,28 +7,30 @@
  * Logic -> Write a Stack Class to push open parenthesis “(“ and pop closed parenthesis “)”. 
  *          At the End of the Expression if the Stack is Empty then the 
  * 
- * Author Name : Aditya Gawde
+ * @author : Aditya Gawde
  * 
- * Date : 19/11/2019
+ * @since : 19/11/2019
  */
 
 var utility = require('../Utility/stackUtility');
 var stack = new utility.Stack();
 
 // Expression string is declare
-var expressionString = '(5+6)*(7+8)/(4+3)(5+6)*(7+8)/(4+3)';
+//var expressionString = '(5+6)*(7+8)/(4+3)(5+6)*(7+8)/(4+3)';
+
+var expressionString = utility.readLine().question('\nEnter your Expression : ')
 
 // expression string is converted into the array
 var expressionArray = expressionString.split('');
 
-console.log('The Arithmetic Expression is '+ expressionString);
+console.log('The Arithmetic Expression is : '+ expressionString);
 
 // checking for expresssion is balanced or not
 if (utility.checkBalancedParentheses(expressionArray)) 
 {
-    console.log('$$ Arithmetic Expression is Balanced $$');
+    console.log('$$ Arithmetic Expression is Balanced $$\n');
 }    
 else
 {
-    console.log('!! Arithmetic Expression is Not Balanced !!');   
+    console.log('!! Arithmetic Expression is Not Balanced !!\n');   
 }

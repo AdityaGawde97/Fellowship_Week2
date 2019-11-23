@@ -12,6 +12,6 @@ var utility1 = require('../../Fellowship_Week1/Utility/Utility')
 
 var anagramArray = utility1.printAnagram();
 
-
+console.log(anagramArray);
 
 
