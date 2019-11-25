@@ -31,8 +31,9 @@ try
         }
             
     }
-    console.log();
+    console.log('\nLinked List\n');
     list.displayList();
+    console.log('\n\nSorting Linked List');
     list.sortLinkedList();
     console.log();
     list.displayList();
@@ -45,19 +46,22 @@ try
     {
         // user input found, removing from list
         list.removeNode(userInput);
+        console.log(`\nNode ${userInput} removed from the Linked List`); 
     } 
     else
     {
         //user input not found, adding in list in the sorting way
         list.addInSortWay(userInput);
+        console.log(`\nNode ${userInput} added to the Linked List`);
     }
     var content = list.printList();
-    console.log();
+    console.log('\nLinked List\n');
     list.displayList();
     console.log();
     console.log();
     // writing resulting list in the file
     utility.writeIntoFile('numberInput.txt', content);
+    console.log('Writing to the File\n');
     
 }
 catch(error)

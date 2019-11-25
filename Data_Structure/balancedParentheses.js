@@ -23,14 +23,14 @@ var expressionString = utility.readLine().question('\nEnter your Expression : ')
 // expression string is converted into the array
 var expressionArray = expressionString.split('');
 
-console.log('The Arithmetic Expression is : '+ expressionString);
+console.log('\nThe Arithmetic Expression is : '+ expressionString);
 
 // checking for expresssion is balanced or not
 if (utility.checkBalancedParentheses(expressionArray)) 
 {
-    console.log('$$ Arithmetic Expression is Balanced $$\n');
+    console.log('\n$$ Arithmetic Expression is Balanced $$\n');
 }    
 else
 {
-    console.log('!! Arithmetic Expression is Not Balanced !!\n');   
+    console.log('\n!! Arithmetic Expression is Not Balanced !!\n');   
 }

@@ -12,7 +12,7 @@ class Stack
     constructor() 
     { 
         // the top of the stack
-        this.top = null; 
+        this.top = null;
     } 
 
     /**
@@ -36,6 +36,7 @@ class Stack
 
         // making last pushed data as top
         this.top = newNode;
+        this.size++;
     }
 
     /**
@@ -53,7 +54,7 @@ class Stack
 
         // making second top node as top
         this.top = this.top.next;
-
+        this.size--;
         //return pop data
         return popData;
     }
@@ -78,6 +79,7 @@ class Stack
         console.log('Stack is Empty');
         return -1;
     }
+
 
     /**
      * @param {to store the stack data} string 

@@ -46,7 +46,7 @@
                 console.log('\n*** Deposite ***');
                 var depositeAmount = utility.readLine().questionInt('Enter your Deposite Money : ');
                 bankBalance += depositeAmount;
-                console.log(`Person ${queue.deQueue()} remove from the Queue`);  // after reciving service person removing from the queue
+                console.log(`\nPerson ${queue.deQueue()} remove from the Queue`);  // after reciving service person removing from the queue
                 console.log('\nBank Balance = ' + bankBalance + '\n');
                 break;
 
@@ -55,7 +55,7 @@
                 var withAmount = utility.readLine().questionInt('Enter your Withdraw Amount : ');
                 if( withAmount < bankBalance ){
                     bankBalance -= withAmount;
-                    console.log(`Person ${queue.deQueue()} remove from the Queue`);
+                    console.log(`\nPerson ${queue.deQueue()} remove from the Queue`);
                     console.log('\nBank Balance = ' + bankBalance + '\n');
                 }
                 else

@@ -8,10 +8,12 @@
  * @since : 22/11/2019
  */
 
-var utility1 = require('../../Fellowship_Week1/Utility/Utility')
+var utility = require('../Utility/utility')
 
-var anagramArray = utility1.printAnagram();
+var anagramArray = utility.printAnagram();
 
 console.log(anagramArray);
+
+//anagramArray.forEach(function(item){process.stdout.write(item + ' ')})
 
 

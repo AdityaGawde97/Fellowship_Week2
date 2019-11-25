@@ -31,7 +31,10 @@ for( var i=0; i<inputFromFileArray.length; i++ )
 }
 
 // printing linked list
-console.log(list.printList());
+console.log('\nLinked List\n');
+list.displayList();
+console.log();
+console.log();
 
 // accepting user input 
 var userInput = utility.readLine().question('Enter the word that you want to search : ');
@@ -41,13 +44,22 @@ if (list.searchNode(userInput))
 {
     // user input found, removing from list
     list.removeNode(userInput);
+    console.log(`\nNode ${userInput} removed from the Linked List`); 
 } 
 else
 {
     //user input not found, adding in list
     list.addNode(userInput);
+    console.log(`\nNode ${userInput} added to the Linked List`);
 }
+
+console.log('\nLinked List\n');
+list.displayList();
+console.log();
+console.log();
+
 var content = list.printList();
 
 // writing resulting list in the file
 utility.writeIntoFile('inputFile.txt', content);
+console.log('Writing to the File\n');

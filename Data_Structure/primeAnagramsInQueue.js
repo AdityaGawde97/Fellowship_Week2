@@ -6,16 +6,13 @@
  * 
  * @since : 22/11/2019
  */
-var utility1 = require('../Utility/queueUtility')
-var utility2 = require('../../Fellowship_Week1/Utility/Utility')
-var queue = new utility1.Queue();
-var primeAnagramArray = utility2.printAnagram();
-console.log('\nBefore Enqueueing prime Anagrams to the Queue : ');
+var utility = require('../Utility/utility')
+var queue3 = utility.inQueuePrintAnagram();
 
-primeAnagramArray.forEach(function(item){process.stdout.write(item + ' ')});
-for( i=0; i<primeAnagramArray.length; i++ )
+console.log('\n\nAfter Enqueueing All prime Anagrams into the Queue : \n');
+//console.log(queue3.printQueue());
+while(!queue3.isEmpty())
 {
-    queue.enQueue(primeAnagramArray[i])
+    process.stdout.write( queue3.deQueue() + ' ' );
 }
-console.log('\n\nAfter Enqueueing All prime Anagrams into the Queue : ');
-console.log(queue.printQueue());
+console.log('\n');

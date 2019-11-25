@@ -7,19 +7,20 @@
  * @since : 22/11/2019
  */
 
-var utility1 = require('../Utility/stackUtility')
-var utility2 = require('../../Fellowship_Week1/Utility/Utility')
-var stack = new utility1.Stack();
-var primeAnagramArray = utility2.printAnagram();
-console.log('\nBefore Pushing prime Anagrams to the Stack : \n');
+var utility = require('../Utility/utility')
 
-primeAnagramArray.forEach(function(item){process.stdout.write(item + ' ')});
-for( i=0; i<primeAnagramArray.length; i++ )
-{
-stack.push(primeAnagramArray[i])
-}
+var stack3 = utility.inStackPrintAnagram();
+
 console.log('\n\nPushing All prime Anagrams into the stack');
 console.log('Print Prime Anagrams in the reverse order : \n');
-console.log(stack.printStack());
+//console.log(stack3.printStack());
+while(!stack3.isEmpty())
+{
+    process.stdout.write( stack3.pop() + ' ' );
+}
+console.log();
+
+
+
 
  
